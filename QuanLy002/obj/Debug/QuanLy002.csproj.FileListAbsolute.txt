@@ -1,0 +1,66 @@
+E:\1Hệ QT CSDL\12312\QuanLy002\bin\Debug\QuanLy002.exe.config
+E:\1Hệ QT CSDL\12312\QuanLy002\bin\Debug\QuanLy002.exe
+E:\1Hệ QT CSDL\12312\QuanLy002\bin\Debug\QuanLy002.pdb
+E:\1Hệ QT CSDL\12312\QuanLy002\bin\Debug\EntityFramework.dll
+E:\1Hệ QT CSDL\12312\QuanLy002\bin\Debug\EntityFramework.SqlServer.dll
+E:\1Hệ QT CSDL\12312\QuanLy002\bin\Debug\EntityFramework.xml
+E:\1Hệ QT CSDL\12312\QuanLy002\bin\Debug\EntityFramework.SqlServer.xml
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.Forms.FrmNhaCC.resources
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.FrmLogin.resources
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.FrmMain.resources
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.Properties.Resources.resources
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.csproj.GenerateResource.cache
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.csproj.CopyComplete
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.exe
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.pdb
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.Forms.FrmKH.resources
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.csprojAssemblyReference.cache
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.Forms.FrmHang.resources
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.Forms.FrmHoaDon.resources
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.Forms.FrmNhanVien.resources
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.Forms.FrmTimHoaDon.resources
+E:\1Hệ QT CSDL\12312\QuanLy002\obj\Debug\QuanLy002.Forms.ChangePassword.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\bin\Debug\QuanLy002.exe.config
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\bin\Debug\QuanLy002.exe
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\bin\Debug\QuanLy002.pdb
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\bin\Debug\EntityFramework.dll
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\bin\Debug\EntityFramework.SqlServer.dll
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\bin\Debug\EntityFramework.xml
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\bin\Debug\EntityFramework.SqlServer.xml
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.csprojAssemblyReference.cache
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.Forms.ChangePassword.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.Forms.FrmHang.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.Forms.FrmHoaDon.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.Forms.FrmKH.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.Forms.FrmNhaCC.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.Forms.FrmNhanVien.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.Forms.FrmTimHoaDon.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.FrmLogin.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.FrmMain.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.Properties.Resources.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.csproj.GenerateResource.cache
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.csproj.CopyComplete
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.exe
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop\QuanLy002\obj\Debug\QuanLy002.pdb
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\bin\Debug\QuanLy002.exe.config
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\bin\Debug\QuanLy002.exe
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\bin\Debug\QuanLy002.pdb
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\bin\Debug\EntityFramework.dll
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\bin\Debug\EntityFramework.SqlServer.dll
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\bin\Debug\EntityFramework.xml
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\bin\Debug\EntityFramework.SqlServer.xml
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.csprojAssemblyReference.cache
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.Forms.ChangePassword.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.Forms.FrmHang.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.Forms.FrmHoaDon.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.Forms.FrmKH.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.Forms.FrmNhaCC.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.Forms.FrmNhanVien.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.Forms.FrmTimHoaDon.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.FrmLogin.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.FrmMain.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.Properties.Resources.resources
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.csproj.GenerateResource.cache
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.csproj.CopyComplete
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.exe
+E:\1Hệ QT CSDL\Quan ly Cua hang Laptop ALLin\QuanLy002\obj\Debug\QuanLy002.pdb

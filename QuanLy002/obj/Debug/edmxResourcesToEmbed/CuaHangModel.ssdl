@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Quanlybanhang001Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChitietHD">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="MaHang" />
+    </Key>
+    <Property Name="MaHD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaHang" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Soluong" Type="float" Nullable="false" />
+    <Property Name="Dongia" Type="float" Nullable="false" />
+    <Property Name="Giamgia" Type="float" Nullable="false" />
+    <Property Name="Thanhtien" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hang">
+    <Key>
+      <PropertyRef Name="MaHang" />
+    </Key>
+    <Property Name="MaHang" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenHang" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaNCC" Type="int" Nullable="false" />
+    <Property Name="Soluong" Type="float" Nullable="false" />
+    <Property Name="GiaNhap" Type="float" Nullable="false" />
+    <Property Name="GiaBan" Type="float" Nullable="false" />
+    <Property Name="Anh" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Ghichu" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaNV" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Ngayban" Type="datetime" Nullable="false" />
+    <Property Name="MaKH" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Tongtien" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Khach">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenKH" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Diachi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dienthoai" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="tendangnhap" />
+    </Key>
+    <Property Name="tendangnhap" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="matkhau" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="loainguoidung" Type="int" Nullable="false" />
+    <Property Name="MaNV" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="NhaCC">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenNCC" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenNV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gioitinh" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Diachi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dienthoai" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Ngaysinh" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Quanlybanhang001.dbo.View_VendorsGeneral' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_VendorsGeneral">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+      <PropertyRef Name="TenNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenNCC" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ChitietHDs_Hang">
+    <End Role="Hang" Type="Self.Hang" Multiplicity="1" />
+    <End Role="ChitietHD" Type="Self.ChitietHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hang">
+        <PropertyRef Name="MaHang" />
+      </Principal>
+      <Dependent Role="ChitietHD">
+        <PropertyRef Name="MaHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChitietHDs_HoaDon">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+    <End Role="ChitietHD" Type="Self.ChitietHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="ChitietHD">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hangs_NhaCC">
+    <End Role="NhaCC" Type="Self.NhaCC" Multiplicity="1" />
+    <End Role="Hang" Type="Self.Hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCC">
+        <PropertyRef Name="MaNCC" />
+      </Principal>
+      <Dependent Role="Hang">
+        <PropertyRef Name="MaNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_HoaDons_Khach">
+    <End Role="Khach" Type="Self.Khach" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khach">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDons_NhanVien">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Login_NhanVien">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="Login" Type="Self.Login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="Login">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_GetChitietHDByMaHD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHD" Type="nvarchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="MaHD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaHang" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soluong" Type="float" Nullable="false" />
+          <Property Name="Dongia" Type="float" Nullable="false" />
+          <Property Name="Giamgia" Type="float" Nullable="false" />
+          <Property Name="Thanhtien" Type="float" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="fn_GetInvoiceByEmployeeId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeeId" Type="nvarchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="MaHD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaNV" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ngayban" Type="datetime" Nullable="false" />
+          <Property Name="MaKH" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Tongtien" Type="float" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="fn_GetInvoiceById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="nvarchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="MaHD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaNV" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ngayban" Type="datetime" Nullable="false" />
+          <Property Name="MaKH" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Tongtien" Type="float" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="fn_GetItemsById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHang" Type="nvarchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="MaHang" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TenHang" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaNCC" Type="int" Nullable="false" />
+          <Property Name="Soluong" Type="float" Nullable="false" />
+          <Property Name="GiaNhap" Type="float" Nullable="false" />
+          <Property Name="GiaBan" Type="float" Nullable="false" />
+          <Property Name="Anh" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Ghichu" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="fn_GetKhachById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaKH" Type="nvarchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="MaKH" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenKH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Diachi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Dienthoai" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="sp_ChangePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User" Type="nvarchar" Mode="In" />
+    <Parameter Name="Pass" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CreateIDKhach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Result" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_CreateInvoiceId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Result" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_CreateMaHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Result" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_CreateMaNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Result" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_DeleteEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteInvoice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="nvarchar" Mode="In" />
+    <Parameter Name="Finished" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="sp_DeleteKhach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteNhaCC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetUserByEmployeeId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaNV" Type="nvarchar" Mode="In" />
+    <Parameter Name="Result" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_InsertEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ma" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="Gioitinh" Type="nvarchar" Mode="In" />
+    <Parameter Name="Dchi" Type="nvarchar" Mode="In" />
+    <Parameter Name="SDT" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOB" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_InsertHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ma" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="Vendor" Type="int" Mode="In" />
+    <Parameter Name="Solg" Type="float" Mode="In" />
+    <Parameter Name="GiaNhap" Type="float" Mode="In" />
+    <Parameter Name="Image" Type="nvarchar" Mode="In" />
+    <Parameter Name="Note" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_InsertKhach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaKH" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenKH" Type="nvarchar" Mode="In" />
+    <Parameter Name="Dchi" Type="nvarchar" Mode="In" />
+    <Parameter Name="SDT" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SearchCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="Phone" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SearchEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="Gioitinh" Type="nvarchar" Mode="In" />
+    <Parameter Name="Diachi" Type="nvarchar" Mode="In" />
+    <Parameter Name="Dienthoai" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SearchInvoice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHD" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaNV" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaKH" Type="nvarchar" Mode="In" />
+    <Parameter Name="Month" Type="int" Mode="In" />
+    <Parameter Name="Year" Type="int" Mode="In" />
+    <Parameter Name="Tongtien" Type="float" Mode="In" />
+  </Function>
+  <Function Name="sp_SearchItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TenHang" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaNCC" Type="int" Mode="In" />
+    <Parameter Name="Soluong" Type="float" Mode="In" />
+    <Parameter Name="GiaBan" Type="float" Mode="In" />
+    <Parameter Name="Ghichu" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SearchVendor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VendorName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ma" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="Gioitinh" Type="nvarchar" Mode="In" />
+    <Parameter Name="Dchi" Type="nvarchar" Mode="In" />
+    <Parameter Name="SDT" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOB" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ma" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="Vendor" Type="int" Mode="In" />
+    <Parameter Name="Solg" Type="float" Mode="In" />
+    <Parameter Name="GiaNhap" Type="float" Mode="In" />
+    <Parameter Name="Image" Type="nvarchar" Mode="In" />
+    <Parameter Name="Note" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateKhach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenKH" Type="nvarchar" Mode="In" />
+    <Parameter Name="Dchi" Type="nvarchar" Mode="In" />
+    <Parameter Name="SDT" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateNhaCC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="TenNCC" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spInsertNhaCC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TenNCC" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spLoginAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TK" Type="nvarchar" Mode="In" />
+    <Parameter Name="MK" Type="nvarchar" Mode="In" />
+    <Parameter Name="Loai" Type="int" Mode="InOut" />
+    <Parameter Name="MaNV" Type="nvarchar" Mode="InOut" />
+    <Parameter Name="Result" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="Quanlybanhang001ModelStoreContainer">
+    <EntitySet Name="ChitietHD" EntityType="Self.ChitietHD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hang" EntityType="Self.Hang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Khach" EntityType="Self.Khach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhaCC" EntityType="Self.NhaCC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View_VendorsGeneral" EntityType="Self.View_VendorsGeneral" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_VendorsGeneral].[MaNCC] AS [MaNCC], 
+    [View_VendorsGeneral].[TenNCC] AS [TenNCC]
+    FROM [dbo].[View_VendorsGeneral] AS [View_VendorsGeneral]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ChitietHDs_Hang" Association="Self.FK_ChitietHDs_Hang">
+      <End Role="Hang" EntitySet="Hang" />
+      <End Role="ChitietHD" EntitySet="ChitietHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChitietHDs_HoaDon" Association="Self.FK_ChitietHDs_HoaDon">
+      <End Role="HoaDon" EntitySet="HoaDon" />
+      <End Role="ChitietHD" EntitySet="ChitietHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hangs_NhaCC" Association="Self.FK_Hangs_NhaCC">
+      <End Role="NhaCC" EntitySet="NhaCC" />
+      <End Role="Hang" EntitySet="Hang" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_HoaDons_Khach" Association="Self.Fk_HoaDons_Khach">
+      <End Role="Khach" EntitySet="Khach" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDons_NhanVien" Association="Self.FK_HoaDons_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Login_NhanVien" Association="Self.FK_Login_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="Login" EntitySet="Login" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

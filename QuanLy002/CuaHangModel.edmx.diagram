@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d67409f154f1463880be9cfb1c3607ba" Name="Diagram1">
+        <EntityTypeShape EntityType="Quanlybanhang001Model.ChitietHD" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Quanlybanhang001Model.Hang" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Quanlybanhang001Model.HoaDon" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Quanlybanhang001Model.Khach" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Quanlybanhang001Model.Login" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Quanlybanhang001Model.NhaCC" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Quanlybanhang001Model.NhanVien" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <AssociationConnector Association="Quanlybanhang001Model.FK_ChitietHDs_Hang" ManuallyRouted="false" />
+        <AssociationConnector Association="Quanlybanhang001Model.FK_ChitietHDs_HoaDon" ManuallyRouted="false" />
+        <AssociationConnector Association="Quanlybanhang001Model.FK_Hangs_NhaCC" ManuallyRouted="false" />
+        <AssociationConnector Association="Quanlybanhang001Model.Fk_HoaDons_Khach" ManuallyRouted="false" />
+        <AssociationConnector Association="Quanlybanhang001Model.FK_HoaDons_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="Quanlybanhang001Model.FK_Login_NhanVien" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Quanlybanhang001Model.View_VendorsGeneral" Width="1.5" PointX="5.375" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

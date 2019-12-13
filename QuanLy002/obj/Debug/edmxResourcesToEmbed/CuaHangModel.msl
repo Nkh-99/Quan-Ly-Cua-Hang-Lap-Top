@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Quanlybanhang001ModelStoreContainer" CdmEntityContainer="Quanlybanhang001Entities">
+    <EntitySetMapping Name="ChitietHDs">
+      <EntityTypeMapping TypeName="Quanlybanhang001Model.ChitietHD">
+        <MappingFragment StoreEntitySet="ChitietHD">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+          <ScalarProperty Name="Giamgia" ColumnName="Giamgia" />
+          <ScalarProperty Name="Thanhtien" ColumnName="Thanhtien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hangs">
+      <EntityTypeMapping TypeName="Quanlybanhang001Model.Hang">
+        <MappingFragment StoreEntitySet="Hang">
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+          <ScalarProperty Name="TenHang" ColumnName="TenHang" />
+          <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
+          <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+          <ScalarProperty Name="Ghichu" ColumnName="Ghichu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Quanlybanhang001Model.Hang">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Quanlybanhang001Model.Store.sp_InsertHang">
+            <ScalarProperty Name="Ghichu" ParameterName="Note" />
+            <ScalarProperty Name="Anh" ParameterName="Image" />
+            <ScalarProperty Name="Soluong" ParameterName="Solg" />
+            <ScalarProperty Name="MaNCC" ParameterName="Vendor" />
+            <ScalarProperty Name="TenHang" ParameterName="Ten" />
+            <ScalarProperty Name="MaHang" ParameterName="Ma" />
+            <ScalarProperty Name="GiaNhap" ParameterName="GiaNhap" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Quanlybanhang001Model.Store.sp_UpdateHang">
+            <ScalarProperty Name="Ghichu" ParameterName="Note" Version="Current" />
+            <ScalarProperty Name="Anh" ParameterName="Image" Version="Current" />
+            <ScalarProperty Name="Soluong" ParameterName="Solg" Version="Current" />
+            <ScalarProperty Name="MaNCC" ParameterName="Vendor" Version="Current" />
+            <ScalarProperty Name="TenHang" ParameterName="Ten" Version="Current" />
+            <ScalarProperty Name="MaHang" ParameterName="Ma" Version="Current" />
+            <ScalarProperty Name="GiaNhap" ParameterName="GiaNhap" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Quanlybanhang001Model.Store.sp_DeleteHang">
+            <ScalarProperty Name="MaHang" ParameterName="Id" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDons">
+      <EntityTypeMapping TypeName="Quanlybanhang001Model.HoaDon">
+        <MappingFragment StoreEntitySet="HoaDon">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="Ngayban" ColumnName="Ngayban" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="Tongtien" ColumnName="Tongtien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khaches">
+      <EntityTypeMapping TypeName="Quanlybanhang001Model.Khach">
+        <MappingFragment StoreEntitySet="Khach">
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="Dienthoai" ColumnName="Dienthoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Quanlybanhang001Model.Khach">
+        <ModificationFunctionMapping>
+          <UpdateFunction FunctionName="Quanlybanhang001Model.Store.sp_UpdateKhach">
+            <ScalarProperty Name="MaKH" ParameterName="Id" Version="Current" />
+            <ScalarProperty Name="Dienthoai" ParameterName="SDT" Version="Current" />
+            <ScalarProperty Name="Diachi" ParameterName="Dchi" Version="Current" />
+            <ScalarProperty Name="TenKH" ParameterName="TenKH" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Quanlybanhang001Model.Store.sp_DeleteKhach">
+            <ScalarProperty Name="MaKH" ParameterName="Id" />
+          </DeleteFunction>
+          <InsertFunction FunctionName="Quanlybanhang001Model.Store.sp_InsertKhach">
+            <ScalarProperty Name="Dienthoai" ParameterName="SDT" />
+            <ScalarProperty Name="Diachi" ParameterName="Dchi" />
+            <ScalarProperty Name="TenKH" ParameterName="TenKH" />
+            <ScalarProperty Name="MaKH" ParameterName="MaKH" />
+          </InsertFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="Quanlybanhang001Model.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
+          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+          <ScalarProperty Name="loainguoidung" ColumnName="loainguoidung" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhaCCs">
+      <EntityTypeMapping TypeName="Quanlybanhang001Model.NhaCC">
+        <MappingFragment StoreEntitySet="NhaCC">
+          <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
+          <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Quanlybanhang001Model.NhaCC">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Quanlybanhang001Model.Store.spInsertNhaCC">
+            <ScalarProperty Name="TenNCC" ParameterName="TenNCC" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Quanlybanhang001Model.Store.sp_UpdateNhaCC">
+            <ScalarProperty Name="MaNCC" ParameterName="Id" Version="Current" />
+            <ScalarProperty Name="TenNCC" ParameterName="TenNCC" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Quanlybanhang001Model.Store.sp_DeleteNhaCC">
+            <ScalarProperty Name="MaNCC" ParameterName="Id" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="Quanlybanhang001Model.NhanVien">
+        <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="Gioitinh" ColumnName="Gioitinh" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="Dienthoai" ColumnName="Dienthoai" />
+          <ScalarProperty Name="Ngaysinh" ColumnName="Ngaysinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Quanlybanhang001Model.NhanVien">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Quanlybanhang001Model.Store.sp_InsertEmployee">
+            <ScalarProperty Name="Ngaysinh" ParameterName="DOB" />
+            <ScalarProperty Name="Dienthoai" ParameterName="SDT" />
+            <ScalarProperty Name="Diachi" ParameterName="Dchi" />
+            <ScalarProperty Name="TenNV" ParameterName="Ten" />
+            <ScalarProperty Name="MaNV" ParameterName="Ma" />
+            <ScalarProperty Name="Gioitinh" ParameterName="Gioitinh" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Quanlybanhang001Model.Store.sp_UpdateEmployee">
+            <ScalarProperty Name="Ngaysinh" ParameterName="DOB" Version="Current" />
+            <ScalarProperty Name="Dienthoai" ParameterName="SDT" Version="Current" />
+            <ScalarProperty Name="Diachi" ParameterName="Dchi" Version="Current" />
+            <ScalarProperty Name="TenNV" ParameterName="Ten" Version="Current" />
+            <ScalarProperty Name="MaNV" ParameterName="Ma" Version="Current" />
+            <ScalarProperty Name="Gioitinh" ParameterName="Gioitinh" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Quanlybanhang001Model.Store.sp_DeleteEmployee">
+            <ScalarProperty Name="MaNV" ParameterName="Id" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spLoginAccount" FunctionName="Quanlybanhang001Model.Store.spLoginAccount" />
+    <FunctionImportMapping FunctionImportName="sp_CreateIDKhach" FunctionName="Quanlybanhang001Model.Store.sp_CreateIDKhach" />
+    <FunctionImportMapping FunctionImportName="sp_CreateMaNV" FunctionName="Quanlybanhang001Model.Store.sp_CreateMaNV" />
+    <FunctionImportMapping FunctionImportName="sp_CreateMaHang" FunctionName="Quanlybanhang001Model.Store.sp_CreateMaHang" />
+    <EntitySetMapping Name="View_VendorsGeneral">
+      <EntityTypeMapping TypeName="Quanlybanhang001Model.View_VendorsGeneral">
+        <MappingFragment StoreEntitySet="View_VendorsGeneral">
+          <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
+          <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="fn_GetChitietHDByMaHD" FunctionName="Quanlybanhang001Model.Store.fn_GetChitietHDByMaHD" />
+    <FunctionImportMapping FunctionImportName="sp_CreateInvoiceId" FunctionName="Quanlybanhang001Model.Store.sp_CreateInvoiceId" />
+    <FunctionImportMapping FunctionImportName="fn_GetInvoiceById" FunctionName="Quanlybanhang001Model.Store.fn_GetInvoiceById" />
+    <FunctionImportMapping FunctionImportName="fn_GetItemsById" FunctionName="Quanlybanhang001Model.Store.fn_GetItemsById" />
+    <FunctionImportMapping FunctionImportName="fn_GetKhachById" FunctionName="Quanlybanhang001Model.Store.fn_GetKhachById" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteInvoice" FunctionName="Quanlybanhang001Model.Store.sp_DeleteInvoice" />
+    <FunctionImportMapping FunctionImportName="sp_SearchVendor" FunctionName="Quanlybanhang001Model.Store.sp_SearchVendor" />
+    <FunctionImportMapping FunctionImportName="sp_SearchCustomer" FunctionName="Quanlybanhang001Model.Store.sp_SearchCustomer" />
+    <FunctionImportMapping FunctionImportName="sp_SearchEmployee" FunctionName="Quanlybanhang001Model.Store.sp_SearchEmployee" />
+    <FunctionImportMapping FunctionImportName="sp_SearchItems" FunctionName="Quanlybanhang001Model.Store.sp_SearchItems" />
+    <FunctionImportMapping FunctionImportName="sp_SearchInvoice" FunctionName="Quanlybanhang001Model.Store.sp_SearchInvoice" />
+    <FunctionImportMapping FunctionImportName="sp_GetUserByEmployeeId" FunctionName="Quanlybanhang001Model.Store.sp_GetUserByEmployeeId" />
+    <FunctionImportMapping FunctionImportName="sp_ChangePassword" FunctionName="Quanlybanhang001Model.Store.sp_ChangePassword" />
+    <FunctionImportMapping FunctionImportName="fn_GetInvoiceByEmployeeId" FunctionName="Quanlybanhang001Model.Store.fn_GetInvoiceByEmployeeId" />
+  </EntityContainerMapping>
+</Mapping>

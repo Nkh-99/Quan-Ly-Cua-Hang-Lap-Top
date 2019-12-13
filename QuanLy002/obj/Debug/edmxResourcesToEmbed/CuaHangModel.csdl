@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Quanlybanhang001Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ChitietHD">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="MaHang" />
+    </Key>
+    <Property Name="MaHD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Soluong" Type="Double" Nullable="false" />
+    <Property Name="Dongia" Type="Double" Nullable="false" />
+    <Property Name="Giamgia" Type="Double" Nullable="false" />
+    <Property Name="Thanhtien" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Hang" Relationship="Self.FK_ChitietHDs_Hang" FromRole="ChitietHD" ToRole="Hang" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.FK_ChitietHDs_HoaDon" FromRole="ChitietHD" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="Hang">
+    <Key>
+      <PropertyRef Name="MaHang" />
+    </Key>
+    <Property Name="MaHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaNCC" Type="Int32" Nullable="false" />
+    <Property Name="Soluong" Type="Double" Nullable="false" />
+    <Property Name="GiaNhap" Type="Double" Nullable="false" />
+    <Property Name="GiaBan" Type="Double" Nullable="false" />
+    <Property Name="Anh" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ghichu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ChitietHDs" Relationship="Self.FK_ChitietHDs_Hang" FromRole="Hang" ToRole="ChitietHD" />
+    <NavigationProperty Name="NhaCC" Relationship="Self.FK_Hangs_NhaCC" FromRole="Hang" ToRole="NhaCC" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ngayban" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tongtien" Type="Double" Nullable="false" />
+    <NavigationProperty Name="ChitietHDs" Relationship="Self.FK_ChitietHDs_HoaDon" FromRole="HoaDon" ToRole="ChitietHD" />
+    <NavigationProperty Name="Khach" Relationship="Self.Fk_HoaDons_Khach" FromRole="HoaDon" ToRole="Khach" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_HoaDons_NhanVien" FromRole="HoaDon" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="Khach">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Dienthoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.Fk_HoaDons_Khach" FromRole="Khach" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="tendangnhap" />
+    </Key>
+    <Property Name="tendangnhap" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="matkhau" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="loainguoidung" Type="Int32" Nullable="false" />
+    <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_Login_NhanVien" FromRole="Login" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="NhaCC">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Hangs" Relationship="Self.FK_Hangs_NhaCC" FromRole="NhaCC" ToRole="Hang" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gioitinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Dienthoai" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ngaysinh" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK_HoaDons_NhanVien" FromRole="NhanVien" ToRole="HoaDon" />
+    <NavigationProperty Name="Logins" Relationship="Self.FK_Login_NhanVien" FromRole="NhanVien" ToRole="Login" />
+  </EntityType>
+  <Association Name="FK_ChitietHDs_Hang">
+    <End Role="Hang" Type="Self.Hang" Multiplicity="1" />
+    <End Role="ChitietHD" Type="Self.ChitietHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hang">
+        <PropertyRef Name="MaHang" />
+      </Principal>
+      <Dependent Role="ChitietHD">
+        <PropertyRef Name="MaHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChitietHDs_HoaDon">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+    <End Role="ChitietHD" Type="Self.ChitietHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="ChitietHD">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hangs_NhaCC">
+    <End Role="NhaCC" Type="Self.NhaCC" Multiplicity="1" />
+    <End Role="Hang" Type="Self.Hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCC">
+        <PropertyRef Name="MaNCC" />
+      </Principal>
+      <Dependent Role="Hang">
+        <PropertyRef Name="MaNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_HoaDons_Khach">
+    <End Role="Khach" Type="Self.Khach" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khach">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDons_NhanVien">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Login_NhanVien">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="Login" Type="Self.Login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="Login">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Quanlybanhang001Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ChitietHDs" EntityType="Self.ChitietHD" />
+    <EntitySet Name="Hangs" EntityType="Self.Hang" />
+    <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
+    <EntitySet Name="Khaches" EntityType="Self.Khach" />
+    <EntitySet Name="Logins" EntityType="Self.Login" />
+    <EntitySet Name="NhaCCs" EntityType="Self.NhaCC" />
+    <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+    <AssociationSet Name="FK_ChitietHDs_Hang" Association="Self.FK_ChitietHDs_Hang">
+      <End Role="Hang" EntitySet="Hangs" />
+      <End Role="ChitietHD" EntitySet="ChitietHDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChitietHDs_HoaDon" Association="Self.FK_ChitietHDs_HoaDon">
+      <End Role="HoaDon" EntitySet="HoaDons" />
+      <End Role="ChitietHD" EntitySet="ChitietHDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hangs_NhaCC" Association="Self.FK_Hangs_NhaCC">
+      <End Role="NhaCC" EntitySet="NhaCCs" />
+      <End Role="Hang" EntitySet="Hangs" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_HoaDons_Khach" Association="Self.Fk_HoaDons_Khach">
+      <End Role="Khach" EntitySet="Khaches" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDons_NhanVien" Association="Self.FK_HoaDons_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Login_NhanVien" Association="Self.FK_Login_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="Login" EntitySet="Logins" />
+    </AssociationSet>
+    <FunctionImport Name="spLoginAccount">
+      <Parameter Name="TK" Mode="In" Type="String" />
+      <Parameter Name="MK" Mode="In" Type="String" />
+      <Parameter Name="Loai" Mode="InOut" Type="Int32" />
+      <Parameter Name="MaNV" Mode="InOut" Type="String" />
+      <Parameter Name="Result" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CreateIDKhach">
+      <Parameter Name="Result" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CreateMaNV">
+      <Parameter Name="Result" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CreateMaHang">
+      <Parameter Name="Result" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="View_VendorsGeneral" EntityType="Quanlybanhang001Model.View_VendorsGeneral" />
+    <FunctionImport Name="fn_GetChitietHDByMaHD" IsComposable="true" EntitySet="ChitietHDs" ReturnType="Collection(Quanlybanhang001Model.ChitietHD)">
+      <Parameter Name="MaHD" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CreateInvoiceId">
+      <Parameter Name="Result" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="fn_GetInvoiceById" IsComposable="true" EntitySet="HoaDons" ReturnType="Collection(Quanlybanhang001Model.HoaDon)">
+      <Parameter Name="Id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="fn_GetItemsById" IsComposable="true" EntitySet="Hangs" ReturnType="Collection(Quanlybanhang001Model.Hang)">
+      <Parameter Name="MaHang" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="fn_GetKhachById" IsComposable="true" EntitySet="Khaches" ReturnType="Collection(Quanlybanhang001Model.Khach)">
+      <Parameter Name="MaKH" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DeleteInvoice">
+      <Parameter Name="Id" Mode="In" Type="String" />
+      <Parameter Name="Finished" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchVendor" EntitySet="NhaCCs" ReturnType="Collection(Quanlybanhang001Model.NhaCC)">
+      <Parameter Name="VendorName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchCustomer" EntitySet="Khaches" ReturnType="Collection(Quanlybanhang001Model.Khach)">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchEmployee" EntitySet="NhanViens" ReturnType="Collection(Quanlybanhang001Model.NhanVien)">
+      <Parameter Name="Ten" Mode="In" Type="String" />
+      <Parameter Name="Gioitinh" Mode="In" Type="String" />
+      <Parameter Name="Diachi" Mode="In" Type="String" />
+      <Parameter Name="Dienthoai" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchItems" EntitySet="Hangs" ReturnType="Collection(Quanlybanhang001Model.Hang)">
+      <Parameter Name="TenHang" Mode="In" Type="String" />
+      <Parameter Name="MaNCC" Mode="In" Type="Int32" />
+      <Parameter Name="Soluong" Mode="In" Type="Double" />
+      <Parameter Name="GiaBan" Mode="In" Type="Double" />
+      <Parameter Name="Ghichu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchInvoice" EntitySet="HoaDons" ReturnType="Collection(Quanlybanhang001Model.HoaDon)">
+      <Parameter Name="MaHD" Mode="In" Type="String" />
+      <Parameter Name="MaNV" Mode="In" Type="String" />
+      <Parameter Name="MaKH" Mode="In" Type="String" />
+      <Parameter Name="Month" Mode="In" Type="Int32" />
+      <Parameter Name="Year" Mode="In" Type="Int32" />
+      <Parameter Name="Tongtien" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetUserByEmployeeId">
+      <Parameter Name="MaNV" Mode="In" Type="String" />
+      <Parameter Name="Result" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ChangePassword">
+      <Parameter Name="User" Mode="In" Type="String" />
+      <Parameter Name="Pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="fn_GetInvoiceByEmployeeId" IsComposable="true" EntitySet="HoaDons" ReturnType="Collection(Quanlybanhang001Model.HoaDon)">
+      <Parameter Name="EmployeeId" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="View_VendorsGeneral">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+      <PropertyRef Name="TenNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNCC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
